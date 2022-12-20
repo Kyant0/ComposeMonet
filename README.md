@@ -1,6 +1,8 @@
 # Compose Monet
 Material You dynamic color theming library with native codes in Jetpack Compose.
 
+🚧 Current API is incubating and may change now.
+
 ## Compatibilities
 
 - **Architectures:** arm64-v8a, x64
