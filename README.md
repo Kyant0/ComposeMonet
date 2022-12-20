@@ -34,7 +34,7 @@ fun MonetTheme(content: @Composable () -> Unit) {
 }
 ```
 
-4. Use dynamic color in your Composables.
+4. Use dynamic colors in your Composables.
 ```kotlin
 0.a1 // accent 1 color with 0% lightness (black)
 50.n1 // neutral 1 color with 50% lightness (mid-gray)
