@@ -3,6 +3,8 @@ Material You dynamic color theming library with native codes in Jetpack Compose.
 
 🚧 Current API is incubating and may change now.
 
+![Screenshot_20221222-135543_Monet](https://user-images.githubusercontent.com/76829190/209067291-5e91eb87-ce53-4964-9eb5-9856bed83a28.png)
+
 ## Compatibilities
 
 - **Architectures:** arm64-v8a, x64
