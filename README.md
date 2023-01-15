@@ -14,12 +14,12 @@ Material You dynamic color theming library for Jetpack Compose, using rust for p
 
 1. Download and include [**monet.aar**](https://github.com/Kyant0/ComposeMonet/blob/main/monet.aar) to your project.
 
-2. Load native library in Application
+2. Load native library in Application.
 ```kotlin
 System.loadLibrary("monet")
 ```
 
-3. Provide LocalTonalPalettes in your theme or other place
+3. Provide LocalTonalPalettes in your theme or other place.
 ```kotlin
 @Composable
 fun MonetTheme(content: @Composable () -> Unit) {
@@ -46,7 +46,7 @@ fun MonetTheme(content: @Composable () -> Unit) {
 }
 ```
 
-4. Use dynamic colors in Composables
+4. Use dynamic colors in Composables.
 
 Syntax: ```<lighness>.<shade>```, where ```<lighness>``` ranges from 0 to 100, ```<shade>``` is one of "a1""a2""a3""n1""n2", usually "a" series are for theming and "n" series are for content text
 ```kotlin
