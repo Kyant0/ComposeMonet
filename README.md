@@ -1,5 +1,5 @@
 # Compose Monet
-Material You dynamic color theming library with native codes in Jetpack Compose.
+Material You dynamic color theming library for Jetpack Compose, using rust for performance.
 
 🚧 Current API is incubating and may change now.
 
@@ -14,12 +14,12 @@ Material You dynamic color theming library with native codes in Jetpack Compose.
 
 1. Download and include [**monet.aar**](https://github.com/Kyant0/ComposeMonet/blob/main/monet.aar) to your project.
 
-2. Load native library in your Application
+2. Load native library in Application
 ```kotlin
 System.loadLibrary("monet")
 ```
 
-3. Change your compose theme like this example
+3. Provide LocalTonalPalettes in your theme or other place
 ```kotlin
 @Composable
 fun MonetTheme(content: @Composable () -> Unit) {
@@ -46,13 +46,15 @@ fun MonetTheme(content: @Composable () -> Unit) {
 }
 ```
 
-4. Use dynamic colors in your Composables.
-```kotlin
-0.a1 // accent 1 color with 0% lightness (black)
-50.n1 // neutral 1 color with 50% lightness (mid-gray)
-100.a3 // accent 3 color with 0% lightness (white)
+4. Use dynamic colors in Composables
 
-40.a1..80.a1 // <light-theme-color>..<dark-theme-color>
+Syntax: ```<lighness>.<shade>```, where ```<lighness>``` ranges from 0 to 100, ```<shade>``` is one of "a1""a2""a3""n1""n2", usually "a" series are for theming and "n" series are for content text
+```kotlin
+0.a1 // accent 1 color with 0% lightness (pure black)
+80.a1 // accent 1 color with 80% lightness
+80.n1 // neutral 1 color with 80% lightness
+
+40.a1..80.a1 // shorthand syntax for dark theme support: <light-theme-color>..<dark-theme-color>
 ```
 
 ## Advanced Usages
