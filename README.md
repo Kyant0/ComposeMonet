@@ -8,17 +8,18 @@ Material You dynamic color theming library with native codes in Jetpack Compose.
 ## Compatibilities
 
 - **Architectures:** arm64-v8a, x64
+- **Android:** 5.0+
 
 ## Usages
 
 1. Download and include [**monet.aar**](https://github.com/Kyant0/ComposeMonet/blob/main/monet.aar) to your project.
 
-2. Add this line to your Application:
+2. Load native library in your Application
 ```kotlin
 System.loadLibrary("monet")
 ```
 
-3. Change your compose theme like this example:
+3. Change your compose theme like this example
 ```kotlin
 @Composable
 fun MonetTheme(content: @Composable () -> Unit) {
@@ -27,12 +28,17 @@ fun MonetTheme(content: @Composable () -> Unit) {
         colorResource(id = android.R.color.system_accent1_500)
     } else Color(0xFF007FAC)
 
-    // There are several styles for TonalPalettes
-    // PaletteStyle.TonalSpot for default, .Spritz for muted style, .Vibrant for vibrant style,...
-    CompositionLocalProvider(LocalTonalPalettes provides TonalPalettes(keyColor = color, style = PaletteStyle.TonalSpot)) {
+    CompositionLocalProvider(
+        LocalTonalPalettes provides TonalPalettes(
+            keyColor = color,
+            // There are several styles for TonalPalettes
+            // PaletteStyle.TonalSpot for default, .Spritz for muted style, .Vibrant for vibrant style,...
+            style = PaletteStyle.TonalSpot
+        )
+    ) {
         CompositionLocalProvider(LocalContentColor provides 0.n1..100.n1) {
             MaterialTheme(
-                colorScheme = dynamicColorScheme(),
+                colorScheme = dynamicColorScheme(), // Optional if you don't use m3
                 content = content
             )
         }
